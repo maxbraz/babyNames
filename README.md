@@ -1,2 +1,1 @@
-# mernStarter
-boilerplate MERN stack list
+Baby name tracker built in MERN
