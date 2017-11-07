@@ -16,12 +16,12 @@ class App extends React.Component {
   }
 
   search(item) {
-    let coordinates;
+    let items;
     axios.post('/item', {
       item: item
     })
     .then(function(response) {
-      coordinates = response.data;
+      console.log('this is the search response: ', response);
     })
     .catch(function(error) {
       console.log(error);
@@ -30,12 +30,12 @@ class App extends React.Component {
     this.fetch(coordinates);
   }
 
-  fetch(coordinates) {
+  fetch(items) {
     let fetchedItems;
 
     axios.get('/items', {
       params: {
-        coordinates: coordinates
+        items: items
       }
     })
     .then(function (response) {
