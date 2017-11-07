@@ -5,8 +5,10 @@ import ListItem from './ListItem.jsx';
 const GirlList = ({items}) => (
   <div>
     <ol>
-      {items.map((item, i) => {
-        return <ListItem key={i} item={item} />
+      {items.map((item) => {
+        if (item.sex === 'Female') {
+          return <ListItem key={item.id} item={item} />
+        }
       })}
     </ol>
   </div>
