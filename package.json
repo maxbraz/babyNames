@@ -23,11 +23,13 @@
     "axios": "^0.16.2",
     "body-parser": "^1.17.2",
     "express": "^4.15.4",
+    "material-ui": "^0.19.4",
     "mongodb": "^2.2.31",
     "mongoose": "^4.11.10",
     "parse-address": "0.0.7",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
+    "react-tap-event-plugin": "^3.0.2",
     "zipcodes": "^4.1.0"
   },
   "devDependencies": {
