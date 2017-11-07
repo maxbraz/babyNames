@@ -2,30 +2,35 @@
   {
     "id": 1,
     "name": "Bart",
+    "sex": "Male",
     "votes": 0,
     "vetoed": false
   },
   {
     "id": 2,
     "name": "Lili",
+    "sex": "Female",
     "votes": 0,
     "vetoed": false
   },
   {
     "id": 3,
     "name": "Ray",
+    "sex": "Male",
     "votes": 0,
     "vetoed": false
   },
   {
     "id": 4,
     "name": "Venus",
+    "sex": "Female",
     "votes": 0,
     "vetoed": false
   },
   {
     "id": 5,
     "name": "Biff",
+    "sex": "Male",
     "votes": 0,
     "vetoed": false
   }
