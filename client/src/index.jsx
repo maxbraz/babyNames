@@ -3,48 +3,79 @@ import ReactDOM from 'react-dom';
 import axios from 'axios';
 import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import Paper from 'material-ui/Paper';
+import AppBar from 'material-ui/AppBar';
+import {GridList, GridTile} from 'material-ui/GridList';
+import IconButton from 'material-ui/IconButton';
+import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 import BoyInput from './components/BoyInput.jsx';
 import GirlInput from './components/GirlInput.jsx';
 import BoyList from './components/BoyList.jsx';
 import GirlList from './components/GirlList.jsx';
 import testData from '../../data.json';
+injectTapEventPlugin();
+
+const styles = {
+  root: {
+    display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-around',
+  },
+  gridList: {
+    width: 500,
+    height: 450,
+    overflowY: 'auto',
+    paddingTop: '5px',
+  },
+};
+
+const tilesData = [
+  {
+    img: 'https://weetnow.com/wp-content/uploads/2016/04/babyboynames.jpg',
+    title: 'Add a Boy',
+  },
+  {
+    img: 'http://cdn2.momjunction.com/wp-content/uploads/2015/02/Christian-Baby-Girl-Names-With-Their-Meanings.jpg',
+    title: 'Add a Girl',
+  },
+];
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      names: testData
+      names: [],
     }
     this.fetchNames = this.fetchNames.bind(this);
     this.addName = this.addName.bind(this);
   }
 
-  addName(item) {
-    let names;
-    axios.post('/item', {
-      item: item
+  componentWillMount() {
+    this.fetchNames();
+  }
+
+  addName(name, sex) {
+    axios.post('/name', {
+      name: name,
+      sex: sex,
     })
-    .then(function(response) {
-      console.log('this is the Add response: ', response);
+    .then((response) => {
+      console.log('successful post');
     })
     .catch(function(error) {
       console.log(error);
     })
 
-    this.fetchNames(coordinates);
+    this.fetchNames();
   }
 
-  fetchNames(names) {
-    let fetchednames;
+  fetchNames() {
+    let fetchedNames;
 
-    axios.get('/names', {
-      params: {
-        names: names
-      }
-    })
-    .then(function (response) {
-      fetchednames = response.data;
-      this.setState({names: fetchednames})
+    axios.get('/names')
+    .then((response) => {
+      fetchedNames = response.data;
+      this.setState({names: fetchedNames})
     })
     .catch(function (error) {
       console.log(error);
@@ -55,12 +86,25 @@ class App extends React.Component {
     return (
       <MuiThemeProvider>
         <div>
-          <div>
-              <BoyInput addName={this.addName}/>
-              <GirlInput addName={this.addName}/>
-          </div>
-          <div>
-            <h4>Name Generator Here Add Button and render on click</h4>
+          <AppBar
+            title="Braz Baby Names 2017"
+          />
+          <div style={styles.root}>
+            <GridList
+              cellHeight={180}
+              style={styles.gridList}
+            >
+              {tilesData.map((tile) => (
+                <GridTile
+                  key={tile.img}
+                  title={tile.title}
+                >
+                  <img src={tile.img} />
+                </GridTile>
+              ))}
+            </GridList>
+            <BoyInput addName={this.addName}/>
+            <GirlInput addName={this.addName}/>
           </div>
           <div>
             <BoyList names={this.state.names}/>
