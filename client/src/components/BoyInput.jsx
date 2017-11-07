@@ -1,14 +1,7 @@
 import React from 'react';
-
-const style = {
-  input: {
-    width: '256px',
-    marginRight: '3px'
-  },
-  button: {
-    backgroundColor: '#8acff0',
-  },
-};
+import TextField from 'material-ui/TextField';
+import FloatingActionButton from 'material-ui/FloatingActionButton';
+import ContentAdd from 'material-ui/svg-icons/content/add';
 
 class BoyInput extends React.Component {
   constructor(props) {
@@ -45,15 +38,18 @@ class BoyInput extends React.Component {
   render() {
     return (
     <div>
-      <h4>Add Boy</h4>
-      <input
-        placeholder="Enter Name"
-        style={style.input}
+      <TextField
+        hintText="Add a Boy Name"
         value={this.state.name}
         onChange={this.onChange}
         onKeyUp={this.handleKeyPress}
       />
-      <button onClick={this.add} style={style.button}> + </button>
+      <FloatingActionButton
+        onClick={this.add}
+        mini
+      >
+        <ContentAdd />
+      </FloatingActionButton>
     </div>
     )
   }

@@ -5,9 +5,7 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import Paper from 'material-ui/Paper';
 import AppBar from 'material-ui/AppBar';
-import {GridList, GridTile} from 'material-ui/GridList';
 import IconButton from 'material-ui/IconButton';
-import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 import BoyInput from './components/BoyInput.jsx';
 import GirlInput from './components/GirlInput.jsx';
 import BoyList from './components/BoyList.jsx';
@@ -15,30 +13,25 @@ import GirlList from './components/GirlList.jsx';
 import testData from '../../data.json';
 injectTapEventPlugin();
 
-const styles = {
-  root: {
-    display: 'flex',
-    flexWrap: 'wrap',
-    justifyContent: 'space-around',
+const style = {
+  sideBySides: {
+    display: 'inline-block',
+    margin: '10px',
   },
-  gridList: {
-    width: 500,
-    height: 450,
-    overflowY: 'auto',
-    paddingTop: '5px',
+  appBar: {
+    width: '634px'
+  },
+  lists: {
+    width: '634px',
+    display: 'inline-block',
+    margin: '10px',
+  },
+  container: {
+    margin: '0 auto',
+    width: '80%',
+    height: '50%',
   },
 };
-
-const tilesData = [
-  {
-    img: 'https://weetnow.com/wp-content/uploads/2016/04/babyboynames.jpg',
-    title: 'Add a Boy',
-  },
-  {
-    img: 'http://cdn2.momjunction.com/wp-content/uploads/2015/02/Christian-Baby-Girl-Names-With-Their-Meanings.jpg',
-    title: 'Add a Girl',
-  },
-];
 
 class App extends React.Component {
   constructor(props) {
@@ -87,28 +80,25 @@ class App extends React.Component {
       <MuiThemeProvider>
         <div>
           <AppBar
+            style={style.appBar}
             title="Braz Baby Names 2017"
+            showMenuIconButton={false}
           />
-          <div style={styles.root}>
-            <GridList
-              cellHeight={180}
-              style={styles.gridList}
-            >
-              {tilesData.map((tile) => (
-                <GridTile
-                  key={tile.img}
-                  title={tile.title}
-                >
-                  <img src={tile.img} />
-                </GridTile>
-              ))}
-            </GridList>
-            <BoyInput addName={this.addName}/>
-            <GirlInput addName={this.addName}/>
+          <div>
+            <div style={style.sideBySides}>
+              <BoyInput addName={this.addName}/>
+            </div>
+            <div style={style.sideBySides}>
+              <GirlInput addName={this.addName}/>
+            </div>
           </div>
           <div>
-            <BoyList names={this.state.names}/>
-            <GirlList names={this.state.names}/>
+            <div style={style.lists}>
+              <BoyList names={this.state.names} />
+            </div>
+            <div style={style.lists}>
+              <GirlList names={this.state.names}/>
+            </div>
           </div>
         </div>
       </MuiThemeProvider>
