@@ -8,20 +8,19 @@ import GirlInput from './components/GirlInput.jsx';
 import BoyList from './components/BoyList.jsx';
 import GirlList from './components/GirlList.jsx';
 import testData from '../../data.json';
-// import Item from '../../db/index.js';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: testData
+      names: testData
     }
-    this.fetch = this.fetch.bind(this);
-    this.add = this.add.bind(this);
+    this.fetchNames = this.fetchNames.bind(this);
+    this.addName = this.addName.bind(this);
   }
 
   addName(item) {
-    let items;
+    let names;
     axios.post('/item', {
       item: item
     })
@@ -32,20 +31,20 @@ class App extends React.Component {
       console.log(error);
     })
 
-    this.fetch(coordinates);
+    this.fetchNames(coordinates);
   }
 
-  fetch(items) {
-    let fetchedItems;
+  fetchNames(names) {
+    let fetchednames;
 
-    axios.get('/items', {
+    axios.get('/names', {
       params: {
-        items: items
+        names: names
       }
     })
     .then(function (response) {
-      fetchedItems = response.data;
-      this.setState({items: fetchedItems})
+      fetchednames = response.data;
+      this.setState({names: fetchednames})
     })
     .catch(function (error) {
       console.log(error);
@@ -64,8 +63,8 @@ class App extends React.Component {
             <h4>Name Generator Here Add Button and render on click</h4>
           </div>
           <div>
-            <BoyList items={this.state.items}/>
-            <GirlList items={this.state.items}/>
+            <BoyList names={this.state.names}/>
+            <GirlList names={this.state.names}/>
           </div>
         </div>
       </MuiThemeProvider>

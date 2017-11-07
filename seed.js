@@ -1,14 +1,14 @@
-let Item = require('./db/index.js');
-let items = require('./data.json');
+let Name = require('./db/index.js');
+let names = require('./data.json');
 
-for (let item of items) {
-  let itemo = new Item({
-    name: item.name,
-    sex: item.sex,
-    votes: item.votes,
-    vetoed: item.vetoed,
+for (let name of names) {
+  let child = new Name({
+    name: name.name,
+    sex: name.sex,
+    votes: name.votes,
+    vetoed: name.vetoed,
   });
-  itemo.save((err) => {
+  child.save((err) => {
     if (err) {
       console.log(err);
     } else {

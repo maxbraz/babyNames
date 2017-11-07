@@ -11,7 +11,7 @@ db.once('open', function() {
   console.log('mongo connected');
 });
 
-let itemSchema = mongoose.Schema({
+let nameSchema = mongoose.Schema({
   id: { type: Number, unique: true },
   name: String,
   sex: String,
@@ -19,6 +19,6 @@ let itemSchema = mongoose.Schema({
   vetoed: Boolean,
 });
 
-let Item = mongoose.model('Item', itemSchema);
+let Name = mongoose.model('Name', nameSchema);
 
-module.exports = Item;
+module.exports = Name;

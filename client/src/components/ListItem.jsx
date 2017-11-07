@@ -1,9 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const ListItem = ({item}) => (
+const ListItem = ({name}) => (
   <li>
-    {`${item.name} ${item.sex} ${item.votes} ${item.vetoed}`}
+    {`${name.name} ${name.sex} ${name.votes} ${name.vetoed}`}
   </li>
 )
 

@@ -2,12 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ListItem from './ListItem.jsx';
 
-const GirlList = ({items}) => (
+const GirlList = ({names}) => (
   <div>
     <ol>
-      {items.map((item) => {
-        if (item.sex === 'Female') {
-          return <ListItem key={item.id} item={item} />
+      {names.map((name) => {
+        if (name.sex === 'Female') {
+          return <ListItem key={name.id} name={name} />
         }
       })}
     </ol>
