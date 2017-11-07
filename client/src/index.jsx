@@ -1,8 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import axios from 'axios';
-import Search from './components/Search.jsx';
-import List from './components/List.jsx';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+import BoyInput from './components/BoyInput.jsx';
+import GirlInput from './components/GirlInput.jsx';
+import BoyList from './components/BoyList.jsx';
+import GirlList from './components/GirlList.jsx';
 import testData from '../../data.json';
 
 class App extends React.Component {
@@ -48,11 +52,23 @@ class App extends React.Component {
   }
 
   render () {
-    return (<div>
-      <h1>Item Search</h1>
-      <Search onSearch={this.search}/>
-      <List items={this.state.items}/>
-    </div>)
+    return (
+      <MuiThemeProvider>
+        <div>
+          <div>
+              <BoyInput onSearch={this.search}/>
+              <GirlInput onSearch={this.search}/>
+          </div>
+          <div>
+            <h4>Name Generator Here Add Button and render on click</h4>
+          </div>
+          <div>
+            <BoyList items={this.state.items}/>
+            <GirlList items={this.state.items}/>
+          </div>
+        </div>
+      </MuiThemeProvider>
+    )
   }
 }
 
