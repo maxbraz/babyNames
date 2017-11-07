@@ -8,6 +8,7 @@ import GirlInput from './components/GirlInput.jsx';
 import BoyList from './components/BoyList.jsx';
 import GirlList from './components/GirlList.jsx';
 import testData from '../../data.json';
+// import Item from '../../db/index.js';
 
 class App extends React.Component {
   constructor(props) {
@@ -16,16 +17,16 @@ class App extends React.Component {
       items: testData
     }
     this.fetch = this.fetch.bind(this);
-    this.search = this.search.bind(this);
+    this.add = this.add.bind(this);
   }
 
-  search(item) {
+  addName(item) {
     let items;
     axios.post('/item', {
       item: item
     })
     .then(function(response) {
-      console.log('this is the search response: ', response);
+      console.log('this is the Add response: ', response);
     })
     .catch(function(error) {
       console.log(error);
@@ -56,8 +57,8 @@ class App extends React.Component {
       <MuiThemeProvider>
         <div>
           <div>
-              <BoyInput onSearch={this.search}/>
-              <GirlInput onSearch={this.search}/>
+              <BoyInput addName={this.addName}/>
+              <GirlInput addName={this.addName}/>
           </div>
           <div>
             <h4>Name Generator Here Add Button and render on click</h4>
