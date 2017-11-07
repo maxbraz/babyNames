@@ -1,5 +1,5 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/mernStarter', {
+mongoose.connect('mongodb://localhost/babyNames', {
   useMongoClient: true,
 });
 
@@ -14,6 +14,7 @@ db.once('open', function() {
 let itemSchema = mongoose.Schema({
   id: { type: Number, unique: true },
   name: String,
+  sex: String,
   votes: Number,
   vetoed: Boolean,
 });
