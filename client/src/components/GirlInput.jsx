@@ -6,11 +6,11 @@ const style = {
     marginRight: '3px'
   },
   button: {
-    backgroundColor: 'green',
+    backgroundColor: '#ffb6c1',
   },
 };
 
-class Search extends React.Component {
+class GirlInput extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -37,17 +37,17 @@ class Search extends React.Component {
   render() {
     return (
     <div>
-      <h4>Search an Item </h4>
+      <h4>Add Girl</h4>
       <input
-        placeholder="Item Placeholder"
+        placeholder="Enter Name"
         style={style.input}
         value={this.state.item}
         onChange={this.onChange}
       />
-      <button onClick={this.search} style={style.button}> Search </button>
+      <button onClick={this.search} style={style.button}> + </button>
     </div>
     )
   }
 }
 
-export default Search;
+export default GirlInput;
