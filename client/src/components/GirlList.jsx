@@ -2,12 +2,16 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import ListItem from './ListItem.jsx';
 
+const style = {
+  backgroundColor: '#ffb6c1'
+}
+
 const GirlList = ({names}) => (
-  <div>
+  <div style={style}>
     <ol>
       {names.map((name) => {
         if (name.sex === 'Female') {
-          return <ListItem key={name.id} name={name} />
+          return <ListItem key={name._id} name={name} />
         }
       })}
     </ol>
