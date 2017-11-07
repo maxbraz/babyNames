@@ -2,8 +2,9 @@ let Item = require('./db/index.js');
 let items = require('./data.json');
 
 for (let item of items) {
-  let itemo = new item({
+  let itemo = new Item({
     name: item.name,
+    sex: item.sex,
     votes: item.votes,
     vetoed: item.vetoed,
   });
