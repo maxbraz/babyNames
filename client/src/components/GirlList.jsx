@@ -1,25 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import ListItem from './ListItem.jsx';
-import {
-  Table,
-  TableBody,
-  TableHeader,
-  TableHeaderColumn,
-  TableRow,
-  TableRowColumn,
-} from 'material-ui/Table';
 
 const style = {
-  backgroundColor: '#ffb6c1'
+  backgroundColor: '#F48FB1',
 }
 
-const GirlList = ({names}) => (
+const GirlList = ({names, changeVeto}) => (
   <div style={style}>
     <ol>
       {names.map((name) => {
-        if (name.sex === 'Female') {
-          return <ListItem key={name._id} name={name} />
+        if (name.sex === 'Female' && !name.vetoed) {
+          return <ListItem key={name._id} name={name} changeVeto={changeVeto}/>
         }
       })}
     </ol>
