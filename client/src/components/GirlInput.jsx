@@ -46,6 +46,7 @@ class GirlInput extends React.Component {
       />
       <FloatingActionButton
         onClick={this.add}
+        backgroundColor={'#F48FB1'}
         mini
         secondary
       >

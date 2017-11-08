@@ -46,6 +46,7 @@ class BoyInput extends React.Component {
       />
       <FloatingActionButton
         onClick={this.add}
+        backgroundColor={'#81D4FA'}
         mini
       >
         <ContentAdd />
