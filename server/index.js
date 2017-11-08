@@ -24,6 +24,19 @@ app.post('/name', (req, res) => {
   });
 });
 
+app.put('/veto', (req, res) => {
+  let query = {_id: req.body._id};
+  let update = {vetoed: !req.body.vetoed};
+
+  Name.findOneAndUpdate(query, update, (err, name) => {
+    if (err) {
+      console.log('error in the PUT server line 33: ', err);
+    } else {
+      res.send(JSON.stringify('Successful PUT'));
+    }
+  });
+});
+
 app.get('/names', (req, res) => {
   Name.find((err, names) => {
     if (err) {
