@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/babyNames', {
-  useMongoClient: true,
-});
+// mongoose.connect('mongodb://localhost/babyNames', {
+//   useMongoClient: true,
+// });
 
+mongoose.connect(MONGODB_URI);
 let db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));
