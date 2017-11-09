@@ -50,5 +50,5 @@ app.get('/names', (req, res) => {
 
 const port = process.env.PORT || 5000;
 app.listen(port, function() {
-  console.log(`MERN Starter listening on ${port}`);
+  console.log(`babyNames listening on: ' ${port}`);
 });
