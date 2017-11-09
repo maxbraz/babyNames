@@ -6,7 +6,9 @@
   "scripts": {
     "react-dev": "webpack -d --watch",
     "server-dev": "nodemon server/index.js",
-    "db-start": "mongod --dbpath ./db"
+    "db-start": "mongod --dbpath ./db",
+    "build": "webpack -p --progress --colors",
+    "heroku-postbuild": "npm run build"
   },
   "repository": {
     "type": "git",
