@@ -1,35 +1,35 @@
 [
   {
     "id": 1,
-    "name": "Bart",
+    "name": "Roscoe",
     "sex": "Male",
     "votes": 0,
     "vetoed": false
   },
   {
     "id": 2,
-    "name": "Lili",
+    "name": "Aspen",
     "sex": "Female",
     "votes": 0,
     "vetoed": false
   },
   {
     "id": 3,
-    "name": "Ray",
+    "name": "Jackson",
     "sex": "Male",
     "votes": 0,
     "vetoed": false
   },
   {
     "id": 4,
-    "name": "Venus",
+    "name": "Lola",
     "sex": "Female",
     "votes": 0,
     "vetoed": false
   },
   {
     "id": 5,
-    "name": "Biff",
+    "name": "Bridger",
     "sex": "Male",
     "votes": 0,
     "vetoed": false
