@@ -1,9 +1,10 @@
 const mongoose = require('mongoose');
-// mongoose.connect('mongodb://localhost/babyNames', {
-//   useMongoClient: true,
-// });
+const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/babyNames';
 
-mongoose.connect(MONGODB_URI);
+mongoose.connect(MONGODB_URI, {
+  useMongoClient: true,
+});
+
 let db = mongoose.connection;
 
 db.on('error', console.error.bind(console, 'connection error:'));
