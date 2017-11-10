@@ -71,12 +71,12 @@ class App extends React.Component {
     })
     .then((response) => {
       console.log('successful post');
+      this.fetchNames();
     })
     .catch(function(error) {
       console.log(error);
     })
 
-    this.fetchNames();
   }
 
   fetchNames() {
