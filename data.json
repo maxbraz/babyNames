@@ -2,31 +2,26 @@
   {
     "name": "Aspen",
     "sex": "Female",
-    "votes": 0,
     "vetoed": false
   },
   {
     "name": "Roscoe",
     "sex": "Male",
-    "votes": 0,
     "vetoed": false
   },
   {
     "name": "Jackson",
     "sex": "Male",
-    "votes": 0,
     "vetoed": false
   },
   {
     "name": "Lola",
     "sex": "Female",
-    "votes": 0,
     "vetoed": false
   },
   {
     "name": "Bridger",
     "sex": "Male",
-    "votes": 0,
     "vetoed": false
   }
 ]

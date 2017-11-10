@@ -5,7 +5,6 @@ for (let name of names) {
   let child = new Name({
     name: name.name,
     sex: name.sex,
-    votes: name.votes,
     vetoed: name.vetoed,
   });
   child.save((err) => {

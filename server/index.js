@@ -11,7 +11,6 @@ app.post('/name', (req, res) => {
   let name = new Name({
     name: req.body.name,
     sex: req.body.sex,
-    votes: 0,
     vetoed: false,
   });
   name.save((err, name) => {
