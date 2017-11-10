@@ -15,7 +15,7 @@ app.post('/name', (req, res) => {
     vetoed: false,
   });
   name.save((err, name) => {
-    console.log('***************names saved');
+    console.log('name saved');
     if (err) {
       console.log('err in post: ', err);
     } else {
