@@ -2,7 +2,7 @@
 .DS_Store
 
 # webpack
-# bundle.js
+bundle.js
 
 # Logs
 logs
