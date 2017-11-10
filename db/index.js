@@ -14,7 +14,6 @@ db.once('open', function() {
 });
 
 let nameSchema = mongoose.Schema({
-  id: { type: Number, unique: true },
   name: String,
   sex: String,
   votes: Number,
