@@ -31,7 +31,8 @@
     "mongoose": "^4.13.0",
     "react": "^15.6.1",
     "react-dom": "^15.6.2",
-    "react-tap-event-plugin": "^2.0.1"
+    "react-tap-event-plugin": "^2.0.1",
+    "webpack": "^3.8.1"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
