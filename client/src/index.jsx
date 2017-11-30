@@ -84,7 +84,7 @@ class App extends React.Component {
 
     axios.get('/names')
     .then((response) => {
-      fetchedNames = response.data;
+      fetchedNames = response.data.sort((a, b) => a.name.localeCompare(b.name));;
       this.setState({names: fetchedNames})
     })
     .catch((error) => {
