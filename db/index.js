@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-const MONGODB_URI = process.env.MONGODB_URI || 'mongodb://localhost/babyNames';
+const DB_URI = process.env.DB_URI || 'mongodb://localhost/babyNames';
 
-mongoose.connect(MONGODB_URI, {
+mongoose.connect(DB_URI, {
   useMongoClient: true,
 });
 
